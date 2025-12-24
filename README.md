@@ -64,6 +64,9 @@ Tactical execution guides (SDR outreach, demos, expansion, etc.)
 **[8. Messaging](./08-messaging.md)**
 Short, hard-hitting messaging for engineers (homepage, emails, social, HN)
 
+**[9. GTM Review & Improvements](./09-gtm-review-improvements.md)**
+Deep analysis of what's built vs what's marketed + action items
+
 ---
 
 ## Phase 1: $0 to $1M ARR
