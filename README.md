@@ -61,6 +61,9 @@ Product-to-revenue automation blueprints
 **[7. Playbooks](./07-playbooks/)**
 Tactical execution guides (SDR outreach, demos, expansion, etc.)
 
+**[8. Messaging](./08-messaging.md)**
+Short, hard-hitting messaging for engineers (homepage, emails, social, HN)
+
 ---
 
 ## Phase 1: $0 to $1M ARR
