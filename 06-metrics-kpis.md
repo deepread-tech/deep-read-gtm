@@ -23,23 +23,23 @@ Track only what matters at each stage. Don't measure everything - measure what d
 
 ## Phase 1: $0 to $1M ARR (5 Metrics That Matter)
 
-### 1. Activation Rate: Context Layer → First Success
+### 1. Activation Rate: API Key → Context Created
 
-**Definition:** % of users who make ≥1 successful API call after creating context layer
+**Definition:** % of users with API key who create a context (upload eval set → optimizer runs → get context_id)
 
 **Target:** ≥40%
 
-**Why it matters:** Low activation = broken onboarding or product. Context layer creation means they've completed setup; first success means they've experienced value.
+**Why it matters:** Context creation = experiencing the Schema Optimizer (core differentiator). Low activation = broken onboarding or users don't understand value. This is where users experience AI-powered optimization that sets us apart from competitors.
 
-**How to measure:** PostHog funnel (context_layer_created → first_ocr_success)
+**How to measure:** PostHog funnel (api_key_created → context_created)
 
 **How to improve:**
-- Better optimizer UX (simpler eval set upload)
-- Clearer accuracy & cost estimates
-- Better quick-start guide after context layer is ready
-- Simpler code samples
+- Better onboarding docs explaining eval set requirement
+- Reduce eval set upload friction (drag-and-drop, clear file format instructions)
+- Clear instructions on what eval set should contain
+- Quick-start guide immediately after API key creation
 - Proactive support for errors
-- Welcome email with working example
+- Welcome email with step-by-step context creation guide
 
 ---
 

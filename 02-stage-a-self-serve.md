@@ -13,7 +13,7 @@ Validate product-market fit and build predictable self-serve revenue motion.
 ## 1. Product-Led Acquisition
 
 ### Goal
-Convert visitors → API key → context layer → first success → recurring usage
+Convert visitors → API key → context → first success → recurring usage
 
 ### Critical Events to Track
 

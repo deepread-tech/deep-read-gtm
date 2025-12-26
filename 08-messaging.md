@@ -397,7 +397,7 @@ Your DeepRead API key: [KEY]
 Next: Upload 100 documents (your eval set).
 
 We'll:
-1. Build a custom context layer (train on 50)
+1. Build a custom context (train on 50)
 2. Test accuracy (validate on 50)
 3. Send you results in 15 minutes
 
@@ -855,7 +855,7 @@ No setup fees. No maintenance costs. No engineer time wasted.
 
 | Plan | Price | Pages/mo | Schema Optimizer | Pipelines |
 |------|-------|----------|------------------|-----------|
-| **Free** | $0 | 50 | 1 run (3 iterations) | Standard only |
+| **Free** | $0 | 100 | 1 run (3 iterations) | Standard only |
 | **Starter** | $99/mo | 1,000 | 3 runs/month | Standard + Searchable |
 | **Growth** | $499/mo | 5,000 | **Unlimited** | All pipelines + configs |
 | **Scale** | $1,999/mo | 25,000 | **Unlimited** | All + priority support |
@@ -866,7 +866,7 @@ No setup fees. No maintenance costs. No engineer time wasted.
 ✓ Multi-model consensus (GPT-5 + Gemini)
 ✓ Per-field confidence scoring
 ✓ Model updates (GPT-5, Gemini, Claude)
-✓ Custom context layers
+✓ Custom contexts
 ✓ 10x throughput (flag 5-10% for human review)
 
 ### Feature Breakdown by Plan

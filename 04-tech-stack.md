@@ -84,23 +84,31 @@ This document details the GTM technology stack for DeepRead, organized by revenu
 **PostHog Setup**
 ```javascript
 // Track key product events
-posthog.capture('api_key_created', {
+posthog.capture('account_created', {
   user_id: user.id,
   email: user.email,
   source: 'docs'
 });
 
-posthog.capture('context_layer_created', {
+posthog.capture('api_key_created', {
   user_id: user.id,
-  accuracy_estimate: contextLayer.accuracy,
-  cost_estimate: contextLayer.costPerPage,
-  eval_set_size: evalSet.pages.length
+  email: user.email
 });
 
-posthog.capture('first_ocr_success', {
+posthog.capture('context_created', {
   user_id: user.id,
-  pages_processed: 1,
-  model: 'gpt-4v'
+  context_id: context.id,
+  baseline_accuracy: context.baseline_accuracy,
+  final_accuracy: context.final_accuracy,
+  improvement: context.improvement,
+  cost: context.total_cost,
+  iterations: context.iterations_run
+});
+
+posthog.capture('first_process_call', {
+  user_id: user.id,
+  context_id: context.id,
+  pages_processed: 1
 });
 
 posthog.capture('volume_milestone', {
@@ -112,10 +120,13 @@ posthog.capture('volume_milestone', {
 **HubSpot CRM Setup**
 - Free tier is enough for $0-1M
 - Create custom properties:
-  - `context_layer_created_date`
-  - `accuracy_estimate`
-  - `cost_estimate`
-  - `first_api_call_date`
+  - `context_created_date`
+  - `context_id`
+  - `baseline_accuracy`
+  - `final_accuracy`
+  - `improvement`
+  - `optimizer_cost`
+  - `first_process_call_date`
   - `total_pages_processed`
   - `pql_score`
   - `activation_status`

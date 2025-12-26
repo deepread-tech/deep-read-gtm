@@ -180,16 +180,20 @@ Traffic (SEO, HN, word-of-mouth)
     ↓
 Docs Engagement
     ↓
+Account Created (Sign Up)
+    ↓
 API Key Created
-    ↓ (Target: ≥40%)
-First Successful API Call
+    ↓ (Target: ≥40% create context)
+Context Created (Schema Optimizer runs)
+    ↓
+First Process Call (using context_id)
     ↓
 Recurring Usage (3+ days/week)
     ↓ (Target: ≥8%)
 Self-Serve Upgrade
 ```
 
-**Key:** Value before friction. No forms until after first API call.
+**Key:** Experience the Schema Optimizer (context creation) before production usage. This differentiates us from competitors.
 
 ### Phase 2: Add Sales Layer
 
@@ -239,7 +243,7 @@ Sales-Assisted Path (30% of logos, 70% of revenue)
 ❌ **Manual lead scoring** - Automate based on product signals
 ❌ **Generic messaging** - Speak technical specifics
 ❌ **Premature sales hiring** - Validate self-serve first
-❌ **Ignoring activation** - API key ≠ success; track context layer creation and first call
+❌ **Ignoring activation** - API key ≠ success; track context creation and first call
 ❌ **Too many tools** - Start minimal, add only when needed
 ❌ **Too many metrics** - 5 metrics in Phase 1, 8 in Phase 2
 
