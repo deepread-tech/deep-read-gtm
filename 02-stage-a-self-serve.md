@@ -13,17 +13,20 @@ Validate product-market fit and build predictable self-serve revenue motion.
 ## 1. Product-Led Acquisition
 
 ### Goal
-Convert visitors → API key → first success → recurring usage
+Convert visitors → API key → context layer → first success → recurring usage
 
 ### Critical Events to Track
 
 | Event | Definition | Why It Matters |
 |-------|-----------|----------------|
-| `api_key_created` | User generates API key | Top-of-funnel activation |
-| `first_ocr_success` | First successful OCR call | Aha moment - experienced value |
+| `account_created` | User signs up / creates account (email + password) | Top-of-funnel signup |
+| `api_key_created` | User generates first API key from dashboard | Setup initiation - ready to start |
+| `context_created` | User uploads eval set to `POST /context` → optimizer runs (3-5 iterations) → returns `context_id` + accuracy stats (baseline → optimized) | Core activation - experienced Schema Optimizer differentiator |
+| `accuracy_report_email_sent` | Accuracy report email sent after context creation (if email provided in request) | User engagement - brings them back to use context |
+| `first_process_call` | First successful `POST /process` call using context_id | Aha moment - production usage started |
 | `docs_to_api_transition` | Docs view → API usage <24hrs | Intent-to-action speed |
-| `volume_threshold` | Pages processed/day | Usage intensity (PQL signal) |
-| `feature_adoption` | Advanced features used | Power user indicator |
+| `volume_threshold` | Pages processed/day via `/process` endpoint | Usage intensity (PQL signal) |
+| `context_recreated` | User creates new context (re-runs optimizer with different documents or to improve accuracy further) | Power user - optimizing for accuracy |
 
 ### Activation Funnel
 
@@ -32,14 +35,26 @@ Website Visit
     ↓ (40-60% of qualified traffic)
 Docs Engagement
     ↓ (20-30%)
+Account Created (Sign Up)
+    ↓ (60-80% of users who start signup)
 API Key Created
-    ↓ (TARGET: ≥40%)
-First Successful OCR Call
-    ↓ (60-70% within 7 days)
+    ↓ (90%+ - automatic or one-click from dashboard)
+Upload Eval Set to POST /context
+    ↓ (TARGET: ≥40% from API key → context created)
+AI Optimizer Runs (3-5 iterations, background)
+    ↓
+Context Created (returns context_id + accuracy report: baseline 78% → optimized 95%)
+    ↓
+[OPTIONAL: Email sent with accuracy report + context_id]
+    ↓ (60-70% within 7 days of context creation)
+First Process Call (POST /process with context_id)
+    ↓
 Recurring Usage (3+ days/week)
     ↓ (TARGET: ≥8%)
 Paid Conversion
 ```
+
+**Key Insight:** Context creation = experiencing the Schema Optimizer (the killer differentiator). Users who create a context have 2-3x higher conversion and retention vs. competitors (AWS Textract, OpenAI wrappers) because they've experienced AI-powered optimization.
 
 ### Tools Required
 
@@ -57,10 +72,17 @@ Paid Conversion
 
 ### Implementation Steps
 
-1. **Week 1-2:** Instrument key events (API key, first call, volume)
-2. **Week 3:** Set up PostHog/Mixpanel dashboards
+1. **Week 1-2:** Instrument key events (API key, context created, accuracy report sent, first process call, volume)
+2. **Week 3:** Set up PostHog/Mixpanel dashboards tracking the full funnel
 3. **Week 4:** Connect events to CRM (via Segment or native integration)
 4. **Ongoing:** Add new events as you discover PQL patterns
+
+**Critical Events to Track:**
+- `account_created` → user signup
+- `api_key_created` → setup initiated
+- `context_created` → Schema Optimizer experienced (core activation)
+- `first_process_call` → production usage started
+- `context_recreated` → power user signal (optimizing for accuracy)
 
 ---
 
@@ -320,9 +342,11 @@ Use for:
 
 | Metric | Target | How to Improve |
 |--------|--------|----------------|
-| **Visitor → API key** | 5-10% | Better CTAs, clearer value prop |
-| **API key → First success** | ≥40% | Improve docs, onboarding emails, reduce errors |
-| **First success → Recurring usage** | 60-70% | Feature education, use case inspiration |
+| **Visitor → Account created** | 5-10% | Better CTAs, clearer value prop, reduce signup friction |
+| **Account created → API key created** | 90%+ | Auto-generate API key on signup or one-click creation from dashboard |
+| **API key → Context created** | ≥40% | Better onboarding docs, reduce eval set upload friction, clear instructions |
+| **Context created → First process call** | 60-70% | Strong accuracy report email, clear next steps, working code samples with context_id |
+| **First process call → Recurring usage** | 60-70% | Feature education, use case inspiration |
 | **PQL → Paid conversion** | ≥8% | Pricing clarity, upgrade prompts, sales touch |
 
 ### Economic Metrics

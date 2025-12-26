@@ -23,18 +23,20 @@ Track only what matters at each stage. Don't measure everything - measure what d
 
 ## Phase 1: $0 to $1M ARR (5 Metrics That Matter)
 
-### 1. Activation Rate: API Key → First Success
+### 1. Activation Rate: Context Layer → First Success
 
-**Definition:** % of users who make ≥1 successful API call after creating key
+**Definition:** % of users who make ≥1 successful API call after creating context layer
 
 **Target:** ≥40%
 
-**Why it matters:** Low activation = broken onboarding or product
+**Why it matters:** Low activation = broken onboarding or product. Context layer creation means they've completed setup; first success means they've experienced value.
 
-**How to measure:** PostHog funnel
+**How to measure:** PostHog funnel (context_layer_created → first_ocr_success)
 
 **How to improve:**
-- Better quick-start guide
+- Better optimizer UX (simpler eval set upload)
+- Clearer accuracy & cost estimates
+- Better quick-start guide after context layer is ready
 - Simpler code samples
 - Proactive support for errors
 - Welcome email with working example

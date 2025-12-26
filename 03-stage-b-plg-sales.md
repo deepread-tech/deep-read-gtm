@@ -101,8 +101,12 @@ SDR receives task:
     ↓
 SDR sends personalized email:
   "I noticed you processed 8,000 pages yesterday.
-   Most teams at that volume need [enterprise feature].
-   Worth a 15min chat?"
+
+   At that volume, most teams benefit from our Schema Optimizer
+   to push accuracy from ~80% to 95%+ (saves weeks of manual
+   prompt engineering).
+
+   Worth a 15min chat to show you how it works?"
     ↓
 Meeting booked → AE takes over → Demo → Contract
 ```
@@ -136,6 +140,8 @@ Meeting booked → AE takes over → Demo → Contract
 - Dedicated support (Slack channel, CSM)
 - Custom contracts (MSA, DPA)
 - Invoice/PO payment (not just credit card)
+- Unlimited Schema Optimizer runs (vs. limited on lower tiers)
+- White-glove optimization service for complex document types
 
 ### Packaging for Enterprise
 
@@ -179,9 +185,10 @@ Meeting booked → AE takes over → Demo → Contract
 
 - **Security & Compliance One-Pager** - SOC 2, GDPR, data handling
 - **ROI Calculator** - Interactive tool: "Input your volume → See cost vs. build"
+- **Schema Optimizer Demo** - Before/after comparison showing 68% → 95% improvement in 3 iterations
 - **Case Studies** - 3-5 stories from similar companies (anonymized if needed)
-- **Comparison Battlecards** - DeepRead vs. AWS Textract, Google Document AI, build in-house
-- **Technical Architecture Doc** - How it works, integration patterns, performance benchmarks
+- **Comparison Battlecards** - DeepRead vs. AWS Textract, Google Document AI, build in-house (emphasize optimizer as unique differentiator)
+- **Technical Architecture Doc** - How it works, multi-model consensus, vision-based failure analysis, integration patterns, performance benchmarks
 
 **Distribution:**
 - Gated on website (capture high-intent leads)

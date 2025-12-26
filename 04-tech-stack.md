@@ -90,6 +90,13 @@ posthog.capture('api_key_created', {
   source: 'docs'
 });
 
+posthog.capture('context_layer_created', {
+  user_id: user.id,
+  accuracy_estimate: contextLayer.accuracy,
+  cost_estimate: contextLayer.costPerPage,
+  eval_set_size: evalSet.pages.length
+});
+
 posthog.capture('first_ocr_success', {
   user_id: user.id,
   pages_processed: 1,
@@ -105,6 +112,9 @@ posthog.capture('volume_milestone', {
 **HubSpot CRM Setup**
 - Free tier is enough for $0-1M
 - Create custom properties:
+  - `context_layer_created_date`
+  - `accuracy_estimate`
+  - `cost_estimate`
   - `first_api_call_date`
   - `total_pages_processed`
   - `pql_score`

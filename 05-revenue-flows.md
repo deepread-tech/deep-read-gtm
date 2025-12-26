@@ -11,7 +11,7 @@ Product signals should automatically trigger revenue actions. No manual work, no
 ### The Simple Path: Product → Revenue
 
 ```
-Visitor → Docs → API Key → First Success → Recurring Use → Upgrade → $$$
+Visitor → Docs → Sign Up → API Key → Context Created (Optimizer) → First Process Call → Recurring Use → Upgrade → $$$
 ```
 
 ### Detailed Flow
@@ -26,19 +26,41 @@ DISCOVERY
 
 ACTIVATION
 │
-│ User clicks: "Get API Key"
-│ Form: Email only (no friction)
+│ User clicks: "Sign Up" or "Get Started"
+│ Form: Email + password (or OAuth)
+↓
+[Event: account_created]
+[Action: Create contact in HubSpot]
+[Action: Enroll in Brevo: Welcome email sequence]
+│
+│ User redirected to dashboard
+│ User creates/gets API key (auto-generated or one-click)
 ↓
 [Event: api_key_created]
-[Action: Create contact in HubSpot]
-[Action: Enroll in Brevo: Welcome email]
+[Action: Update HubSpot: activation_status = "api_key_created"]
 │
-│ Email: API key + quick-start code sample
-│ User makes first API call
+│ Email: Quick-start guide with API key + instructions
+│ User uploads eval set to POST /context endpoint
 ↓
-[Event: first_ocr_success]
-[Action: Update HubSpot: activation_status = "first_success"]
-[Action: Send congrats email]
+[Action: Schema Optimizer runs in background (3-5 iterations)]
+[Action: Optimize schema from baseline → 95%+ accuracy]
+│
+│ Optimizer completes
+↓
+[Event: context_created]
+[Returns: context_id + accuracy stats (baseline_accuracy, final_accuracy, improvement, cost)]
+[Action: Update HubSpot: activation_status = "context_created", store accuracy stats]
+│
+│ IF email provided in request: Send accuracy report email
+↓
+[Event: accuracy_report_email_sent]
+[Email: "Your context is ready! 78% → 95% accuracy. Here's your context_id: ctx_abc123"]
+│
+│ User makes first /process call with context_id
+↓
+[Event: first_process_call]
+[Action: Update HubSpot: activation_status = "first_process_call"]
+[Action: Send congrats email if first production call]
 
 HABIT FORMATION
 │
@@ -83,32 +105,56 @@ MONETIZATION
 
 | Stage | Conversion Target | Avg Time |
 |-------|------------------|----------|
-| Visitor → API key | 5-10% | N/A |
-| API key → First success | **≥40%** | <24 hours |
-| First success → Recurring use | 60-70% | 7 days |
+| Visitor → Account created | 5-10% | N/A |
+| Account created → API key created | 90%+ | <5 minutes |
+| API key → Context created | **≥40%** | <2 hours (optimizer runtime) |
+| Context created → First process call | 60-70% | <24 hours |
+| First process call → Recurring use | 60-70% | 7 days |
 | Recurring use → PQL | 40-50% | 14 days |
 | PQL → Paid | **≥8%** | 30 days |
 
 ### Automation Triggers (Phase 1)
 
-**Trigger 1: api_key_created**
+**Trigger 1: account_created**
 ```
 Actions:
 1. Create contact in HubSpot
-2. Set activation_status = "api_key_created"
-3. Enroll in Brevo: "Onboarding Day 0"
+2. Set activation_status = "account_created"
+3. Enroll in Brevo: "Onboarding Day 0" sequence
 4. If @enterprise-domain.com: Tag "high_priority" + Slack alert
+5. Send welcome email with dashboard link
 ```
 
-**Trigger 2: first_ocr_success**
+**Trigger 2: api_key_created**
 ```
 Actions:
-1. Set activation_status = "first_success"
-2. Set first_api_call_date = today
-3. Send email: "Nice! Here's what to try next"
+1. Update activation_status = "api_key_created"
+2. Set api_key_created_date = today
+3. Send quick-start email with API key + code samples
+4. Create task reminder: "Check if context created in 48hrs"
 ```
 
-**Trigger 3: recurring_usage (3+ calls in 7 days)**
+**Trigger 3: context_created**
+```
+Actions:
+1. Set activation_status = "context_created"
+2. Set context_created_date = today
+3. Store context_id, baseline_accuracy, final_accuracy, improvement, cost in HubSpot
+4. IF email provided: Send accuracy report email
+   Subject: "Your context is ready! 78% → 95% accuracy"
+   Body: context_id + how to use it in /process calls
+```
+
+**Trigger 4: first_process_call**
+```
+Actions:
+1. Set activation_status = "first_process_call"
+2. Set first_process_call_date = today
+3. Track which context_id was used
+4. Send email: "Nice! Here's what to try next"
+```
+
+**Trigger 5: recurring_usage (3+ calls in 7 days)**
 ```
 Actions:
 1. Set activation_status = "recurring_user"
@@ -116,7 +162,7 @@ Actions:
 3. If score >50: Tag "pql" + create task for founder
 ```
 
-**Trigger 4: usage >80 pages (approaching limit)**
+**Trigger 6: usage >80 pages (approaching limit)**
 ```
 Actions:
 1. Email: "You're approaching your 100 page limit"
@@ -125,7 +171,7 @@ Actions:
 4. If not upgraded: Email with pricing + ROI calculator
 ```
 
-**Trigger 5: subscription_created**
+**Trigger 7: subscription_created**
 ```
 Actions:
 1. Create deal: "Self-Serve Customer" (Closed-Won)
@@ -507,9 +553,11 @@ Log feedback → Product improvements
 ### Phase 1: Self-Serve Flow Metrics
 
 **Funnel:**
-- Visitor → API key: 5-10%
-- API key → First success: ≥40%
-- First success → Recurring: 60-70%
+- Visitor → Account created: 5-10%
+- Account created → API key: 90%+
+- API key → Context created: ≥40%
+- Context created → First process call: 60-70%
+- First process call → Recurring: 60-70%
 - PQL → Paid: ≥8%
 
 **Speed:**

@@ -7,7 +7,10 @@
 **Category:** Developer Infrastructure - OCR Pipeline Automation
 
 **Key Message:**
-"Everyone knows LLMs are better at OCR, but building production pipelines takes weeks. DeepRead is the infrastructure for best-in-class OCR - so you can ship in hours, not months."
+"Self-optimizing OCR for structured extraction. Multi-model consensus + AI that auto-improves prompts. Get 95% accuracy in 3 iterations, not 3 weeks."
+
+**Technical Depth:**
+"The 50K-line multi-model pipeline you'd build + the 12K-line AI optimizer that continuously improves it. Vision-based failure analysis, cross-document generalization, production-ready schemas."
 
 ### Target Segments
 
@@ -102,7 +105,7 @@ As you grow from 100 → 10,000 users, automation maintains quality without line
 ### Must-Have from Day 1
 
 1. **Product Analytics Integration**
-   - Track: API key creation, first success, volume usage
+   - Track: Account creation, API key creation, context creation (optimizer completion), first process call, volume usage
    - Route signals to CRM automatically
    - Enable cohort analysis
 

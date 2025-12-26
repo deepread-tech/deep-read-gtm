@@ -30,7 +30,7 @@ Complete go-to-market strategy for DeepRead - infrastructure for production-read
 - Can't focus on core product
 
 **Our Solution:**
-Battle-tested infrastructure for best-in-class OCR pipelines. We don't claim magic - we built the infrastructure so you don't have to.
+Multi-model OCR consensus with auto-optimizing schemas. The 50K-line pipeline you'd build + the AI that continuously improves it. Vision-based failure analysis gets you to 95% accuracy in hours, not weeks.
 
 **Target:** Engineering teams at tech companies processing >10K documents/month
 
@@ -77,7 +77,7 @@ Deep analysis of what's built vs what's marketed + action items
 - Hit $1M ARR with minimal team
 
 ### The 5 Metrics That Matter
-1. **Activation Rate:** API key → First success (**≥40%**)
+1. **Activation Rate:** Account created → Context created (**≥40%** of signups create context)
 2. **PQL Conversion:** PQL → Paid (**≥8%**)
 3. **MRR Growth:** Month-over-month (**15-20%**)
 4. **CAC Payback:** Months to recover cost (**<3 months**)
@@ -220,7 +220,7 @@ Sales-Assisted Path (30% of logos, 70% of revenue)
 ### Must-Have from Day 1
 
 1. **Product analytics integration**
-   - Track: API key, first success, volume
+   - Track: Account creation, API key, context creation (optimizer runs), first process call, volume
    - Feed signals to CRM automatically
 
 2. **Documentation as marketing**
@@ -239,7 +239,7 @@ Sales-Assisted Path (30% of logos, 70% of revenue)
 ❌ **Manual lead scoring** - Automate based on product signals
 ❌ **Generic messaging** - Speak technical specifics
 ❌ **Premature sales hiring** - Validate self-serve first
-❌ **Ignoring activation** - API key ≠ success; track first call
+❌ **Ignoring activation** - API key ≠ success; track context layer creation and first call
 ❌ **Too many tools** - Start minimal, add only when needed
 ❌ **Too many metrics** - 5 metrics in Phase 1, 8 in Phase 2
 

@@ -6,16 +6,22 @@
 
 ## Core Value Prop (Pick One)
 
-### Option A: The Complexity Bomb
-**"Production OCR: 40,000 lines of code. You don't have to write them."**
+### Option A: Optimizer-First (RECOMMENDED)
+**"Self-optimizing OCR for structured extraction"**
 
-### Option B: The Time Saver
-**"6 weeks to build. 10 hours/month to maintain. Or: Use ours, ship today."**
+Subhead: "Multi-model consensus + AI that auto-improves prompts. 95% accuracy in 3 iterations, not 3 weeks."
 
-### Option C: The Model Churn
-**"Models change every quarter. Your pipeline needs constant re-optimization. We handle it."**
+### Option B: Engineer Problem-Focused
+**"Stop tweaking OCR prompts. Let AI do it."**
 
-### Option D: The Honest One (Recommended)
+Subhead: "Automated schema optimization: 68% → 95% in 3-5 iterations. Vision-based failure analysis, cross-document generalization, production-ready output."
+
+### Option C: The Infrastructure + AI Angle
+**"OCR infrastructure that optimizes itself"**
+
+Subhead: "50K lines of pipeline code + 12K lines of auto-optimization. Upload docs, get 95% accuracy, ship your product."
+
+### Option D: The Honest One
 **"Yes, you can build this. It's 6 weeks + ongoing maintenance. Or use ours."**
 
 ---
@@ -25,13 +31,13 @@
 ### Hero Section
 
 **Headline:**
-"Production OCR infrastructure for developers"
+"Self-optimizing OCR for structured extraction"
 
 **Subhead:**
-"Multi-model consensus, automatic optimization, continuous model updates. The 40K-line pipeline you'd build, already built."
+"Multi-model consensus + AI that auto-improves prompts. 95% accuracy in 3 iterations, not 3 weeks."
 
 **CTA:**
-[Try on your documents] [See the architecture]
+[Upload your eval set] [See how it works]
 
 ---
 
@@ -39,9 +45,9 @@
 
 **3 Bullet Points (max):**
 
-✓ **Multi-model consensus** - 6-8 specialized steps, not one API call
-✓ **Auto-optimization** - Stay current as GPT-5, Gemini, Claude improve
-✓ **Ship today** - 6 weeks of build time, gone
+✓ **Auto-optimizing schemas** - AI analyzes failures, generates better prompts (68% → 95% in hours)
+✓ **Multi-model consensus** - 6-8 specialized steps with LLM-judge voting
+✓ **10x throughput** - Flag 5-10% for human review, auto-process 90-95%
 
 ---
 
@@ -156,40 +162,201 @@ What you actually need:
 
 ---
 
+## The Optimizer Pitch (Primary Differentiator)
+
+### Headline
+**"Stop tweaking prompts. Let AI do it."**
+
+### Visual: Manual vs Automated
+
+```
+Manual Prompt Engineering:
+─────────────────────────────────────────────────────
+Week 1: Write schema
+       → Run extraction → 68% accuracy
+       → Analyze failures manually
+       → Guess what's wrong
+
+Week 2: Update prompts
+       → Re-run extraction → 75% accuracy
+       → More manual analysis
+       → More guessing
+
+Week 3: Keep tweaking
+       → Re-run extraction → 82% accuracy
+       → Frustrated, ship it
+
+Total: 3 weeks, 82% accuracy, lots of guessing
+─────────────────────────────────────────────────────
+
+
+DeepRead Schema Optimizer:
+─────────────────────────────────────────────────────
+Hour 1: Upload 20 documents + ground truth
+
+Hour 2-4: Optimizer runs automatically:
+         → Iteration 1: 68% → GPT-5 vision analyzes failures
+         → Iteration 2: 78% → Auto-generates better prompts
+         → Iteration 3: 89% → Tests on held-out validation
+         → Iteration 4: 95% → Converged
+
+Total: 4 hours, 95% accuracy, zero guessing
+─────────────────────────────────────────────────────
+
+Difference: 3 weeks vs 4 hours. 82% vs 95%.
+```
+
+### How It Works
+
+**1. Vision-Based Failure Analysis**
+```
+Traditional: "Field 'invoice_date' extracted wrong. Why?"
+You: Stare at the PDF, guess what went wrong
+
+DeepRead Optimizer:
+→ GPT-5 vision examines the actual PDF
+→ "The date is in MM/DD/YYYY format, but your schema expects YYYY-MM-DD"
+→ "The label says 'Date' not 'Invoice Date'"
+→ Auto-generates improved prompt with location hints
+```
+
+**2. Cross-Document Generalization**
+```
+Traditional: Optimize on one vendor's invoices
+Result: Works great for Vendor A, fails on Vendor B
+
+DeepRead Optimizer:
+→ Trains on 20 mixed-source documents
+→ Validates on held-out test set
+→ Generates prompts that handle variations
+Result: Works across all vendors
+```
+
+**3. Iterative Improvement Loop**
+```
+Start: Basic schema (vendor, date, total)
+↓
+Iteration 1: Extract → Accuracy 68%
+           → Vision analysis identifies failures
+           → "Date field: Add format hint, common labels"
+↓
+Iteration 2: Re-extract with improved prompts → 78%
+           → "Total field: Look near 'Amount Due', 'Balance'"
+↓
+Iteration 3: Re-extract → 89%
+           → "Vendor: Check header AND footer"
+↓
+Iteration 4: Re-extract → 95%
+           → Converged (improvement <2%)
+↓
+Done: Production-ready schema
+```
+
+### What You Get
+
+**Optimized Schema:**
+```json
+{
+  "invoice_date": {
+    "type": "string",
+    "format": "date",
+    "description": "Invoice date in YYYY-MM-DD format. Common labels: 'Invoice Date', 'Date', 'Billing Date'. Usually in header near invoice number. Formats vary: MM/DD/YYYY, DD/MM/YYYY, spelled out."
+  },
+  "vendor_name": {
+    "type": "string",
+    "description": "Vendor/company name. Check: Header (top-left or center), footer, remittance section. May include legal suffixes (LLC, Inc). Ignore 'Bill To' or customer names."
+  }
+}
+```
+
+**Improvement Report:**
+```
+Baseline Accuracy: 68%
+Final Accuracy: 95%
+Improvement: +27 percentage points
+
+Field-Level Improvements:
+- invoice_date: 0% → 100% (+100%) - Added format hints and label variations
+- vendor_name: 40% → 90% (+50%) - Added location hints (header/footer)
+- total_amount: 80% → 100% (+20%) - Added nearby label context
+- account_number: 90% → 95% (+5%) - Added OCR error handling
+
+Iterations: 4
+Time: 3.2 hours
+Cost: $8.40
+```
+
+### The Moat
+
+**Why competitors can't copy this:**
+
+1. **Vision-based analysis** - Requires tight integration between vision models and extraction pipeline
+2. **Cross-validation** - Need held-out test sets, proper train/test splits
+3. **Convergence detection** - Know when to stop (avoid overfitting)
+4. **Prompt engineering expertise** - Codified 2 years of learnings
+5. **Production pipeline integration** - Optimized schemas work in production immediately
+
+**AWS Textract:** No optimization (fixed prompts)
+**OpenAI wrappers:** Manual prompt tweaking only
+**DeepRead:** Automated optimization with vision-based failure analysis
+
+### Use Cases
+
+**1. New Document Type**
+- Upload 20 examples → Get 95% schema in hours
+- No manual prompt engineering
+- Production-ready immediately
+
+**2. Accuracy Below Target**
+- Current schema: 82% accurate
+- Run optimizer → 95% in 3-4 iterations
+- Learn which prompts work
+
+**3. Multi-Vendor Documents**
+- Invoices from 10 different vendors
+- Train on mixed set → General schema that handles all
+- No per-vendor customization needed
+
+### CTA
+
+[Upload your eval set] [See example improvements]
+
+---
+
 ## Social Media / HN / Twitter
 
-### Version 1: The LOC Bomb
-"Production OCR isn't 1 API call. It's 40,000 lines of multi-model consensus, optimization, and failover. We built it so you don't have to. [link]"
+### Version 1: Optimizer-First (RECOMMENDED)
+"Stop manually tweaking OCR prompts. We built AI that optimizes them automatically. 68% → 95% accuracy in 4 hours using GPT-5 vision-based failure analysis. [link]"
 
-**Length:** 156 chars
-
----
-
-### Version 2: The Maintenance Tax
-"You'll build an LLM OCR pipeline in 2 weeks. Then spend 10 hours/month maintaining it as models change. Forever. [link]"
-
-**Length:** 128 chars
+**Length:** 167 chars
 
 ---
 
-### Version 3: The Model Churn
-"GPT-5.5 drops next month. Will you re-benchmark your OCR pipeline? Re-optimize routing? Update consensus logic? We do. Full-time. [link]"
+### Version 2: Problem-Focused
+"You: Stare at PDFs, guess why extraction failed, tweak prompts, repeat for weeks. DeepRead Optimizer: GPT-5 vision analyzes failures, auto-generates better prompts. 95% in hours. [link]"
 
-**Length:** 148 chars
+**Length:** 188 chars
 
 ---
 
-### Version 4: The Honest Approach
-"Building OCR is 6 weeks. Maintaining it is 10 hours/month, forever. We built it. You can use ours or build your own. Both valid. [link]"
+### Version 3: Time Savings
+"Manual prompt engineering: 3 weeks to hit 82% extraction accuracy. DeepRead Optimizer: 4 hours to hit 95%. Vision-based failure analysis, cross-document generalization. [link]"
 
-**Length:** 141 chars
+**Length:** 178 chars
+
+---
+
+### Version 4: The Moat
+"AWS Textract: Fixed prompts. OpenAI wrappers: Manual tweaking. DeepRead: AI optimizer that uses GPT-5 vision to analyze extraction failures and auto-generate better prompts. [link]"
+
+**Length:** 182 chars
 
 ---
 
 ### Version 5: HN-Specific (Technical)
-"Our production OCR: 6-8 model calls per document (primary/secondary/judge/resolve/extract/review). LangGraph orchestration. 12K-line optimizer. Not claiming magic - just built the infra. [link]"
+"Built an AI optimizer for OCR extraction schemas. Uses GPT-5 vision to analyze why extractions fail, auto-generates improved prompts with location hints/format rules. 68%→95% in 3-4 iterations. Plus the 50K-line multi-model consensus pipeline. [link]"
 
-**Length:** 192 chars
+**Length:** 250 chars
 
 ---
 
@@ -264,30 +431,37 @@ Results:
 
 On YOUR document types. Tested on 50 of your files.
 
-What this means:
-Instead of 6 weeks building a pipeline, you tested ours in 15 minutes.
+────────────────────────────────────────
 
-Next: Make your first production call.
+Want to push to 97-98%?
+
+Run the Schema Optimizer:
+→ Upload 20 representative documents + ground truth
+→ AI analyzes extraction failures with GPT-5 vision
+→ Auto-generates improved prompts (location hints, format rules)
+→ Get 95-98% accuracy in 3-4 iterations (4 hours, not 3 weeks)
+
+[Run Optimizer] ← Primary CTA
+[Use Current Context (94%)] ← Secondary CTA
+
+────────────────────────────────────────
+
+Or start with what you have:
 
 ```python
 import deepread
 result = deepread.ocr("invoice.pdf", context_id="ctx_abc123")
 ```
 
-[Start processing] ← CTA
-
-Not impressed? Reply and tell me why.
+Questions? Reply to this email.
 
 Best,
 [Founder]
 
-P.S. Your custom context uses:
-- GPT-5 Mini (reasoning)
-- Gemini Flash (vision)
-- Consensus voting (when they disagree)
-- Automatic quality flagging
-
-You'd build the same thing. Just saved 6 weeks.
+P.S. The optimizer uses GPT-5 vision to understand WHY extractions fail
+(wrong format? label variations? OCR errors?) and automatically
+generates better prompts. It's like having an ML engineer optimize
+your schema for you.
 ```
 
 ---
@@ -360,10 +534,11 @@ Total Year 1: 15 minutes (~$0 eng time)
 |-------------------|----------|
 | Week 1-2: Build pipeline | **Day 1**: Working OCR |
 | Week 3-4: Multi-model consensus | ✅ 6-8 model orchestration |
-| Week 5-6: Build optimizer | ✅ 12K-line optimizer included |
+| Week 5-6: Build optimizer | ✅ AI optimizer included |
+| Weeks 7+: Manual prompt tweaking | ✅ Automated optimization |
 | Ongoing: 10hrs/month maintenance | ✅ We maintain it |
 | Model updates: Your problem | ✅ Always on latest models |
-| **Total time:** 6-8 weeks + forever | **Total time:** 15 minutes |
+| **Total time:** 8+ weeks + forever | **Total time:** 4 hours |
 
 **When to DIY:**
 - You're building an OCR company
@@ -372,6 +547,23 @@ Total Year 1: 15 minutes (~$0 eng time)
 - OCR is your core IP
 
 **Otherwise:** Use DeepRead. Ship your product.
+
+---
+
+### Competitive Positioning Matrix
+
+| Feature | AWS Textract | OpenAI Wrapper | DeepRead |
+|---------|--------------|----------------|----------|
+| **Schema Optimization** | ❌ Manual only | ❌ Manual only | ✅ **Automated AI optimizer** |
+| **Vision-based Failure Analysis** | ❌ | ❌ | ✅ GPT-5 analyzes PDFs |
+| **Multi-model Consensus** | ❌ Single model | ❌ Single model | ✅ 2-3 models + judge |
+| **Per-field Confidence** | ✅ Basic scores | ❌ None | ✅ LLM-judge flags |
+| **Cost Optimization** | ❌ Fixed pricing | ❌ Fixed markup | ✅ 6 configs ($0.02-$0.15) |
+| **Searchable PDFs** | ❌ | ❌ | ✅ OCR + text layer |
+| **10x Throughput** | ❌ | ❌ | ✅ Flag 5-10%, auto-process 90% |
+
+**Key Differentiator:**
+Only DeepRead has automated schema optimization with vision-based failure analysis. Saves 3 weeks of manual prompt engineering per document type.
 
 ---
 
@@ -661,32 +853,59 @@ No setup fees. No maintenance costs. No engineer time wasted.
 
 ### Pricing Grid
 
-| Plan | Price | Includes |
-|------|-------|----------|
-| **Free** | $0 | 1 custom context, 50 pages |
-| **Starter** | $99/mo | 1,000 pages, standard pipeline |
-| **Growth** | $499/mo | 5,000 pages, premium pipeline |
-| **Scale** | $1,999/mo | 25,000 pages, custom optimization |
-| **Enterprise** | Custom | Unlimited, dedicated infra |
+| Plan | Price | Pages/mo | Schema Optimizer | Pipelines |
+|------|-------|----------|------------------|-----------|
+| **Free** | $0 | 50 | 1 run (3 iterations) | Standard only |
+| **Starter** | $99/mo | 1,000 | 3 runs/month | Standard + Searchable |
+| **Growth** | $499/mo | 5,000 | **Unlimited** | All pipelines + configs |
+| **Scale** | $1,999/mo | 25,000 | **Unlimited** | All + priority support |
+| **Enterprise** | Custom | Unlimited | **Unlimited** | Dedicated infra |
 
 **All plans include:**
-✓ Multi-model consensus
-✓ Automatic optimization
-✓ Model updates (GPT-5, Gemini, etc.)
+✓ **AI Schema Optimizer** (vision-based failure analysis)
+✓ Multi-model consensus (GPT-5 + Gemini)
+✓ Per-field confidence scoring
+✓ Model updates (GPT-5, Gemini, Claude)
 ✓ Custom context layers
-✓ Quality review & flagging
+✓ 10x throughput (flag 5-10% for human review)
+
+### Feature Breakdown by Plan
+
+**Free:**
+- Test the optimizer (1 run, max 3 iterations)
+- Evaluate on your documents
+- Export optimized schema
+
+**Starter ($99/mo):**
+- Limited optimizer runs (3/month)
+- Good for 1-2 document types
+- Production-ready extraction
+
+**Growth ($499/mo):**
+- **Unlimited optimizer runs** ← Most popular
+- Multiple document types
+- All 6 cost/accuracy configs
+- Searchable PDF creation
+
+**Scale/Enterprise:**
+- Everything in Growth
+- Higher volume
+- Priority support
+- Custom SLAs
 
 ### Below Pricing
 
 **"What you're NOT paying for:**
-- 6 weeks of engineering time ($12K+)
+- 3 weeks per document type (manual prompt engineering)
+- 6 weeks of pipeline development ($12K+)
 - Monthly maintenance (10 hrs × $75/hr = $750/mo)
 - Model benchmarking & re-optimization
-- LangGraph infrastructure code
-- Optimizer development & tuning
+- ML engineer to tune your schemas
 
 **What you ARE paying for:**
-- Pages processed. That's it."
+- Pages processed
+- Schema optimization runs
+- That's it."
 
 ---
 
@@ -774,46 +993,52 @@ A: Growth+: 99.9% uptime. Enterprise: 99.95% + dedicated support.
 ## Launch Messaging (HN Post)
 
 **Title:**
-"DeepRead - Production OCR infrastructure (we built the 40K-line pipeline so you don't have to)"
+"DeepRead - AI that optimizes OCR extraction schemas automatically (vision-based failure analysis)"
 
 **Post:**
 ```
 Hey HN,
 
-I've watched a dozen teams build the same LLM OCR pipeline:
+I've watched a dozen teams waste weeks manually optimizing OCR extraction prompts.
 
-Week 1: GPT-4V works great
-Week 2: Add Gemini for comparison
-Week 3: Build consensus logic (which result to trust?)
-Week 4: Optimize costs (40% cheaper with smart routing)
-Week 5-6: Build optimizer (iterate prompts to 95% accuracy)
+The problem:
+- You write a schema → 68% extraction accuracy
+- You stare at PDFs, guess why it failed
+- You tweak prompts, re-run → 75%
+- Repeat for 2-3 weeks → Ship at 82%
 
-Then: Maintain it forever as models change.
+We built an AI optimizer that does this automatically.
 
-We built DeepRead to skip this.
+How it works:
+1. Upload 20 documents + ground truth
+2. GPT-5 vision analyzes extraction failures on the actual PDFs
+   ("Date is MM/DD/YYYY but schema expects YYYY-MM-DD")
+3. Auto-generates improved prompts with location hints, format rules
+4. Validates on held-out test set (cross-document generalization)
+5. Repeats until convergence (3-5 iterations)
 
-What it is:
-- Multi-model consensus (6-8 steps, not 1 API call)
-- Automatic optimization (stay current as GPT-5, Gemini improve)
-- 40,000 lines of Python (LangGraph, type-safe, tested)
+Result: 68% → 95% in 4 hours, not 3 weeks.
+
+Plus we built the 50K-line multi-model consensus pipeline (GPT-5 + Gemini,
+LLM-judge voting, per-field confidence, 6 cost/accuracy configs).
 
 What it's not:
-- Proprietary models (we use GPT-5, Gemini, etc.)
-- Magic (same LLMs you have access to)
-- Lock-in (standard API, migrate anytime)
+- Fine-tuning (we optimize prompts, not model weights)
+- Proprietary models (same LLMs you have access to)
+- Lock-in (export optimized schemas, use anywhere)
 
-Use case: You need production OCR but don't want to spend 6 weeks building infrastructure.
+The optimizer is the differentiator. AWS Textract doesn't have it. OpenAI
+wrappers don't have it. It saves 3 weeks of manual work per document type.
 
 Try it: [link]
-Architecture: [link]
+Optimizer docs: [link]
 Questions: Ask here or email [email]
 
-Not for everyone. If you're building an OCR company, you should build this. If OCR is infrastructure for your product, we built it so you don't have to.
-
-Feedback welcome.
+Feedback welcome - especially interested in what document types you're
+struggling with.
 ```
 
-**Length:** ~1200 chars (HN sweet spot)
+**Length:** ~1400 chars
 
 ---
 
