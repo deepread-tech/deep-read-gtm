@@ -51,13 +51,13 @@ DeepRead's GTM stack unifies product data with revenue workflows, aligning marke
 ```
 ┌─────────────────────────────────────────────┐
 │         PRODUCT ANALYTICS                   │
-│    (PostHog/Mixpanel + Segment)            │
+│              (PostHog)                      │
 └──────────────┬──────────────────────────────┘
                │ Product Signals
                ↓
 ┌─────────────────────────────────────────────┐
 │      CRM & REVENUE CORE                     │
-│         (HubSpot/Salesmate)                 │
+│              (HubSpot)                      │
 └──────────────┬──────────────────────────────┘
                │ Triggers
                ↓

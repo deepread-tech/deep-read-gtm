@@ -187,7 +187,7 @@ Subhead: "Multi-model consensus + AI that auto-improves prompts. 95% accuracy in
 ### Recommended Version 2 (Engineer-Friendly)
 **"OCR infrastructure that optimizes itself"**
 
-Subhead: "50K lines of pipeline code + 12K lines of auto-optimization. Upload docs, get 95% accuracy, ship your product."
+Subhead: "Multi-model consensus pipeline with AI-powered schema optimization. Upload docs, get 95% accuracy, ship your product."
 
 ---
 
@@ -204,12 +204,12 @@ Subhead: "Automated schema optimization: 68% → 95% accuracy in 3-5 iterations.
 "Battle-tested infrastructure for best-in-class OCR pipelines. We don't claim magic - we built the infrastructure so you don't have to."
 
 ### Recommended:
-"Multi-model OCR consensus with auto-optimizing schemas. The 50K-line pipeline you'd build + the AI that continuously improves it."
+"Multi-model OCR consensus with auto-optimizing schemas. The production pipeline you'd spend 6-8 weeks building + the AI that continuously improves it."
 
 **Why Better:**
-- **Multi-model consensus** → explains the complexity
-- **Auto-optimizing schemas** → highlights the killer feature
-- **50K lines** → concrete, impressive
+- **Multi-model consensus** → explains the value (better accuracy)
+- **Auto-optimizing schemas** → highlights the killer feature (time savings)
+- **6-8 weeks to build** → concrete time investment avoided
 - **AI that improves it** → self-improving, not static
 
 ---
@@ -250,7 +250,7 @@ Subhead: "Automated schema optimization: 68% → 95% accuracy in 3-5 iterations.
 | Feature | AWS Textract | OpenAI Wrapper | DeepRead |
 |---------|--------------|----------------|----------|
 | Multi-model consensus | ❌ | ❌ | ✅ 2-3 models |
-| Auto-optimization | ❌ | ❌ | ✅ 12K LOC optimizer |
+| Auto-optimization | ❌ | ❌ | ✅ Vision-based optimizer |
 | Per-field confidence | ✅ (basic) | ❌ | ✅ (LLM-judge) |
 | Custom schemas | ❌ | Manual only | ✅ Auto-optimized |
 | Cost optimization | Fixed | Fixed | ✅ 6 configs |

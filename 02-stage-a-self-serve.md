@@ -59,22 +59,23 @@ Paid Conversion
 ### Tools Required
 
 **Product Analytics:**
-- **PostHog** or **Mixpanel** - event tracking, funnel analysis, cohort retention
+- **PostHog** - event tracking, funnel analysis, cohort retention
+- Free tier includes up to 1M events/month
 - Custom dashboards for: activation rate, time-to-value, usage trends
 
-**Event Unification:**
-- **Segment** (optional but recommended) - pipes product events to CRM, marketing tools
-- Alternative: Direct integrations if budget-constrained
+**Event Routing (Skip for now):**
+- Don't use Segment until $3M+ ARR
+- Use direct PostHog → HubSpot integration (free)
 
-**Central Data Store:**
-- **Snowflake** or **BigQuery** - store product events, enable SQL analysis
-- Needed when you want to join product data with CRM/revenue data
+**Data Warehouse (Skip until $3M+ ARR):**
+- PostHog analytics is enough for Phase 1
+- Add Snowflake only when you need complex cross-platform queries
 
 ### Implementation Steps
 
 1. **Week 1-2:** Instrument key events (API key, context created, accuracy report sent, first process call, volume)
-2. **Week 3:** Set up PostHog/Mixpanel dashboards tracking the full funnel
-3. **Week 4:** Connect events to CRM (via Segment or native integration)
+2. **Week 3:** Set up PostHog dashboards tracking the full funnel
+3. **Week 4:** Connect PostHog to HubSpot (native integration)
 4. **Ongoing:** Add new events as you discover PQL patterns
 
 **Critical Events to Track:**
@@ -102,9 +103,9 @@ Paid Conversion
 
 ### Lead Enrichment Stack
 
-**Tools:**
-- **Apollo** or **Cognism** - enrich email → company data, employee count, tech stack
-- **Visitor ID tools** (e.g., Clearbit Reveal, 6sense) - convert anonymous traffic to companies
+**Tool:**
+- **Apollo** (Basic plan: $49/mo) - enrich email → company data, employee count, tech stack
+- Skip visitor ID tools until $3M+ ARR (expensive, low ROI for early-stage)
 
 **Enrichment Workflow:**
 
@@ -124,7 +125,7 @@ Apply PQL scoring model
 
 ### Signal-Based Lead Triggers
 
-Use **Tactic** or similar tools to create real-time triggers:
+Use HubSpot workflows to create real-time triggers:
 
 | Trigger | Action |
 |---------|--------|
@@ -144,13 +145,14 @@ Use **Tactic** or similar tools to create real-time triggers:
 
 ## 3. CRM & Revenue Core
 
-### Recommended: HubSpot CRM
+### CRM: HubSpot (Free Tier)
 
 **Why HubSpot:**
+- Free tier is powerful (unlimited contacts, basic workflows)
 - Native marketing automation
 - Strong API for product data sync
-- Workflow automation for PQL routing
-- Scales from Stage A → Stage B
+- Scales easily to $10M+ ARR
+- Industry standard (easier to hire people who know it)
 
 **Core Setup:**
 
@@ -174,15 +176,7 @@ Use **Tactic** or similar tools to create real-time triggers:
 - PQL threshold met → Create deal → Assign to founder/SDR
 - 7 days no activity → Re-engagement email
 
-### Alternative: Salesmate
-
-**Why Salesmate:**
-- Lower cost ($15-30/user vs. $50-100 for HubSpot)
-- Built-in email sequences
-- Sandy AI for outreach automation
-- Good for lean teams
-
-**Trade-off:** Less robust marketing automation, may need separate tool (Brevo)
+**Cost:** $0/mo (free tier) until you need Sales Hub features at $500/mo
 
 ### Implementation Checklist
 
@@ -381,12 +375,12 @@ You're ready for Stage B when:
 ## Quick Win Checklist (First 90 Days)
 
 **Week 1-2: Foundation**
-- [ ] Set up PostHog/Mixpanel with core events
+- [ ] Set up PostHog with core events
 - [ ] Implement API key creation tracking
 - [ ] Create HubSpot account, configure properties
 
 **Week 3-4: Automation**
-- [ ] Connect product events to HubSpot (via Segment or webhook)
+- [ ] Connect product events to HubSpot (via webhook)
 - [ ] Build PQL scoring model (simple: volume + frequency)
 - [ ] Set up welcome email sequence in Brevo
 

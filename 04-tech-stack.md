@@ -309,13 +309,11 @@ HubSpot + Brevo
 Product (API)
     ↓ events
 PostHog
-    ↓
-Segment (optional)
     ↓ routes to:
 ├─ HubSpot (CRM)
 ├─ Brevo (Email)
 ├─ Snowflake (Data Warehouse)
-└─ BI Tool (Metabase/Looker)
+└─ Metabase (BI)
 ```
 
 **When to add warehouse:**
@@ -324,7 +322,7 @@ Segment (optional)
 - Custom reports for board/investors
 - Multiple data sources to unify
 
-**Cost:** $500-2K/mo (Snowflake + BI tool)
+**Cost:** $500-2K/mo (Snowflake + Metabase)
 
 ---
 
@@ -408,31 +406,25 @@ Segment (optional)
 
 ---
 
-## Tool Alternatives by Budget
+## Clear Tool Recommendations (No Alternatives)
 
-### Tight Budget ($0-1M ARR)
+**For every category, we recommend ONE tool:**
 
-| Need | Expensive Option | Budget Option |
-|------|-----------------|---------------|
-| CRM | Salesforce ($150/user) | HubSpot Free → Starter ($50/user) |
-| Email | Marketo ($1,000+/mo) | Brevo ($25/mo) |
-| Analytics | Amplitude ($500+/mo) | PostHog Free → $200/mo |
-| Enrichment | ZoomInfo ($15K/yr) | Apollo ($49/mo) |
-| Meetings | Calendly Teams ($16/user) | Cal.com ($12/user or self-host free) |
-| Forms | Typeform ($35/mo) | Tally (free) |
+| Category | Recommended Tool | Cost |
+|----------|-----------------|------|
+| **CRM** | HubSpot (start free) | $0 → $500/mo at $1M ARR |
+| **Email** | Brevo | $25-65/mo |
+| **Analytics** | PostHog | Free → $200/mo |
+| **Enrichment** | Apollo | $49-149/mo |
+| **Meetings** | Cal.com | Free (self-host) or $12/user |
+| **Payments** | Stripe | 2.9% + 30¢ |
 
-### More Budget ($1-10M ARR)
-
-You can afford better tools, but still be intentional:
-
-| Need | Good Enough | Premium |
-|------|-------------|---------|
-| CRM | HubSpot ($500-1.5K/mo) | Salesforce ($3K+/mo) |
-| CS Platform | HubSpot Service Hub ($450/mo) | Gainsight ($2K+/mo) |
-| Sales Intel | Apollo ($149/user) | ZoomInfo ($300+/user) |
-| Analytics | PostHog ($500/mo) | Amplitude ($2K+/mo) |
-
-**Most companies should stick with "Good Enough" until $10M+ ARR.**
+**Don't use:**
+- ❌ Salesforce (too expensive, too complex until $50M+ ARR)
+- ❌ Marketo/Pardot (overkill for PLG motion)
+- ❌ ZoomInfo (too expensive, Apollo is enough)
+- ❌ Amplitude/Mixpanel (PostHog is cheaper and better for PLG)
+- ❌ Gainsight (HubSpot Service Hub is enough until $10M+ ARR)
 
 ---
 

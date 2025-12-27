@@ -217,14 +217,12 @@ Meeting booked → AE takes over → Demo → Contract
 
 ### CS Tools
 
-**Option 1: HubSpot Service Hub** (if already using HubSpot)
+**HubSpot Service Hub**
 - Ticketing, knowledge base
 - Customer health scoring
 - Renewal tracking
-
-**Option 2: Dedicated CS Platform (ChurnZero/Gainsight)**
-- When to adopt: >50 paying customers, expansion revenue >20% of ARR
-- Features: Health scores, playbooks, in-app engagement, success plans
+- Most cost-effective since you're already using HubSpot
+- Sufficient until $10M+ ARR
 
 ### Expansion Playbooks
 
