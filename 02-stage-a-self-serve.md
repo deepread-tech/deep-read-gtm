@@ -396,4 +396,10 @@ You're ready for Stage B when:
 
 ---
 
+## Implementation Resources
+
+**Ready to build?** Follow the [Stage A Setup Checklist](./10-stage-a-setup-checklist.md) for step-by-step instructions on setting up PostHog, HubSpot, Brevo, and Stripe.
+
+---
+
 [← Back to Overview](./01-gtm-overview.md) | [Next: Stage B →](./03-stage-b-plg-sales.md)

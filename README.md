@@ -30,7 +30,10 @@ Complete go-to-market strategy for DeepRead - infrastructure for production-read
 - Can't focus on core product
 
 **Our Solution:**
-Multi-model OCR consensus with auto-optimizing schemas. The 50K-line pipeline you'd build + the AI that continuously improves it. Vision-based failure analysis gets you to 95% accuracy in hours, not weeks.
+Production OCR infrastructure with AI-powered schema optimization. Get 95% accuracy on your documents in hours, not weeks. No prompt engineering required.
+
+**What makes us different:**
+Unlike Reducto (per-document fixes) or Extend.ai (passive learning), DeepRead actively trains an optimizer on your eval set to create a reusable, optimized schema.
 
 **Target:** Engineering teams at tech companies processing >10K documents/month
 
@@ -66,6 +69,9 @@ Short, hard-hitting messaging for engineers (homepage, emails, social, HN)
 
 **[9. GTM Review & Improvements](./09-gtm-review-improvements.md)**
 Deep analysis of what's built vs what's marketed + action items
+
+**[10. Stage A Setup Checklist](./10-stage-a-setup-checklist.md)**
+Step-by-step checklist for building the tech stack (PostHog, HubSpot, Brevo, Stripe)
 
 ---
 
@@ -254,8 +260,9 @@ Sales-Assisted Path (30% of logos, 70% of revenue)
 ### If You're Pre-Launch
 1. Read [GTM Overview](./01-gtm-overview.md)
 2. Focus on [Phase 1](./02-stage-a-self-serve.md)
-3. Set up [Tech Stack](./04-tech-stack.md) (minimal version)
-4. Track the [5 core metrics](./06-metrics-kpis.md)
+3. Follow [Stage A Setup Checklist](./10-stage-a-setup-checklist.md) to build your stack
+4. Set up [Tech Stack](./04-tech-stack.md) (minimal version)
+5. Track the [5 core metrics](./06-metrics-kpis.md)
 
 ### If You're at $0-500K ARR
 1. Review [Phase 1](./02-stage-a-self-serve.md) entirely
